@@ -2,12 +2,13 @@
 """
 Created on Wed Jan  5 18:51:37 2022
 
-@author: vercr
+@author: hcflem
 """
 
 from random import randint
+
 # import csv
-# import time
+import time
 # mydict = {}
 
 # with open('verbs.csv', mode='r') as inp:
@@ -21,9 +22,9 @@ def aleatoire(verbes):
 
 def script(verbes,i_verbe):
     print("\n",verbes[i_verbe][0])
-    réponse_infinitif=input("  Écrivez son infinitif : ")
-    réponse_preterit=input("  Écrivez son prétérit  : ") 
-    réponse_participe_passé=input("  Écrivez son participe passé  : ")
+    réponse_infinitif=input("    Écrivez son infinitif : ")
+    réponse_preterit=input("    Écrivez son prétérit  : ") 
+    réponse_participe_passé=input("    Écrivez son participe passé  : ")
     réponses=[réponse_infinitif,réponse_preterit,réponse_participe_passé]
     compteur=0
     if réponses[0]==verbes[i_verbe][1][0]:
@@ -38,8 +39,12 @@ def script(verbes,i_verbe):
         return verbes[i_verbe][0]
     
 
+  
+
     
 def main(verbes):
+    print("Bienvenue sur mon script d'entrainement aux verbes irréguliers, \n si vous avez des idées de modifications/bugs => @hcflem ")
+    time.sleep(3)
     verbes2=verbes
     score=0
     échecs=[]
@@ -53,7 +58,7 @@ def main(verbes):
         else:
             échecs.append(a)
         del verbes2[i_verbe]
-        print("\nVotre score est de ",score,"/",36-len(verbes2))
+        print("\nVotre score: ",score,"/",36-len(verbes2),"     Erreurs :",échecs)
     return 
 
 main(verbes)
